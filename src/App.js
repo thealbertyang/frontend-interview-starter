@@ -1,6 +1,10 @@
 import React from 'react';
+import { text, highlights } from '@textio/frontend-interview-data';
 import logo from './logo.svg';
 import './App.css';
+
+console.log("Textio string:", text);
+console.log("Textio highlights:", highlights);
 
 function App() {
   return (
