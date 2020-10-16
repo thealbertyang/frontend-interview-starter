@@ -1,6 +1,6 @@
 ## Welcome to Textio's frontend interview starter!
 
-This is a `Create React App` project with data preinstalled to support the interview problem. In `src/App.js`, you should see a pair of imports from `@textio/frontend-interview-data`: you'll use that data to support your solution, replacing what's currently rendered in `App.js`.
+This is a `Create React App` project with data preinstalled to support the interview problem. In `src/App.js`, you should see a pair of imports from [@textio/frontend-interview-data](https://github.com/textioHQ/frontend-interview-data): you'll use that data to support your solution, replacing what's currently rendered in `App.js`.
 
 The rest of this README comes straight from `Create React App`:
 
