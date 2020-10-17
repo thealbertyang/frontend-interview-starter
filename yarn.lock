@@ -1472,10 +1472,10 @@
   resolved "https://registry.yarnpkg.com/@testing-library/user-event/-/user-event-7.2.1.tgz#2ad4e844175a3738cb9e7064be5ea070b8863a1c"
   integrity sha512-oZ0Ib5I4Z2pUEcoo95cT1cr6slco9WY7yiPpG+RGNkj8YcYgJnM7pXmYmorNOReh8MIGcKSqXyeGjxnr8YiZbA==
 
-"@textio/frontend-interview-data@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@textio/frontend-interview-data/-/frontend-interview-data-1.0.3.tgz#e74f1de9101b2b83ceb5868c1f526ea339213d25"
-  integrity sha512-frelur/YapcFgGSzilBXZXAjALCtIpTI4d0yS2IV46NHcXNjp13ZW/ifCP5VF82ipyd0JMKXjHW8KIW1PTSA4Q==
+"@textio/frontend-interview-data@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@textio/frontend-interview-data/-/frontend-interview-data-1.0.4.tgz#167a09647d4eaef21ccd154c79b532da6b4f9d3f"
+  integrity sha512-dVkj53QYuGYsPylzd0jYLvz02HA+COrM4AsjtuuJ+9VIGb4XQXgqRCt0G0Z7c6LYLwi+bIZKxy7O5skCB5BM4g==
 
 "@types/aria-query@^4.2.0":
   version "4.2.0"
