@@ -36,24 +36,62 @@ const calcHighlightsOverlap = (highlights) => {
 
 //highlight with corrected array
 const highlightText = (text, highlights) => {
-  //should go through each character, insert on startOffset with highlighted color, end on endOFfset
+  const highlightedText = [];
   const textArr = text.split("");
-  console.log(textArr);
-  highlights.forEach((highlight) => {
 
+  console.log(textArr);
+
+  highlights.forEach((highlight, index) => {
+    //slice method incase of html format in future
+    
+    //if beginning slice look at previous slices
+    if(index === 0){
+      const sliceEnd = highlight.startOffset - 1;
+      const slicedText = textArr.slice(0, sliceEnd);
+      highlightedText.push(slicedText.join(''));
+    }
+
+    //current slice
+    const sliceStart = highlight.startOffset;
+    const sliceEnd = highlight.endOffset;
+    const slicedText = textArr.slice(sliceStart, sliceEnd);
+    const wrap = (backgroundColor, text) => <span style={{ backgroundColor }}>{text}</span>
+    highlightedText.push(wrap(highlight.color, slicedText.join('')));
+
+    //look at next inbetween slice to the next highlight
+    const next = highlights[index + 1];
+    const current = highlight;
+    if(typeof next !== 'undefined'){
+      const isDifference = next.startOffset - current.endOffset > 1;
+
+      if(isDifference){
+        const sliceStart = current.endOffset + 1;
+        const sliceEnd = next.startOffset - 1;
+        const slicedText = textArr.slice(sliceStart, sliceEnd);
+        highlightedText.push(slicedText.join(''));
+      }
+    }
   });
+
+  //if end slice look at slice to text length
+
+  //account for spaces
+  //account for irregularities
+  console.log(highlightedText);
+
+  return highlightedText;
 }
 
 function App() {
   const useHighlights = calcHighlightsOverlap(sortHighlights(highlights));
-  highlightText(text, useHighlights);
+  const highlightedText = highlightText(text, useHighlights);
 
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div style={{ display: 'flex', flexDirection: 'row' }}>
+          {highlightedText.map((item) => item)}
+        </div>
       </header>
     </div>
   );
